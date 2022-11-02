@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'shop',
 ]
 
+#use this for the shoping basket/cart
+BASKET_SESSION_ID = 'basket'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

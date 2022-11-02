@@ -3,7 +3,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from shop.models import Cart, Customer, LineItem, Order, Product
 from shop.forms import SignUpForm
-from shop.views import basket
+from shop.views.basket import Basket
 
 def signup(request):
     form = SignUpForm(request.POST)
@@ -27,7 +27,7 @@ def dashboard(request):
     if user.is_authenticated & user.is_staff:
         return render(request, 'shop/dashboard.html')
     else:
-        return redirect('/accounts/login.html')
+        return redirect('shop:login.html')
 
 # save order, clear basket and thank customer
 def payment(request):
@@ -53,4 +53,4 @@ def purchase(request):
        
        return render(request, 'shop/purchase.html', {'basket': basket, 'user': user})
     else:
-        return redirect('login')
+        return redirect('shop:login')
