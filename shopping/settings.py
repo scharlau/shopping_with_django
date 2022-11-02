@@ -51,6 +51,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+# https://docs.djangoproject.com/en/4.1/topics/auth/default/ 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/' 
+
 ROOT_URLCONF = 'shopping.urls'
 
 TEMPLATES = [
