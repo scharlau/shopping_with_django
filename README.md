@@ -23,17 +23,43 @@ You will need to create a superuser as well if you want to work with the admin f
 
         python3 manage.py createsuperuser
 
-Otherwise each customer created is also a user with a default password set in the management/commands/populate_tables.py file.
+Otherwise each customer created is also a user with a default password set in the management/commands/populate_tables.py file. 
 
 You can launch django with the usual command:
 
         python3 manage.py runserver
 
-As you go around the site notice what's working, what's bare-bones, and other issues. This is not finished, but a work in progress to illustrate how you might build a shopping application.
+With the server running, you can navigate around both parts of the application:
+1. Go around the genearl website and notice what's working, what's bare-bones, and other issues. This is not finished, but a work in progress to illustrate how you might build a shopping application. 
+2. Go to localhost:8000/admin and login with your superuser credentials. There you'll see the Django admin interface. From here you can also add products, and customers. The models listed here are specified in the shop/admin.py file.
 
 ### The Payment System 
 This uses sessions to put items into a basket, which can be seen via 'Basket' link, and then shifted to 'Purchase' with the user details. This is based in part on the example at https://github.com/PacktPublishing/Django-3-by-Example/tree/master/Chapter08 from a book of the same name.
 
 A key for the basket is set in settings.py, which will be unique for each shopper.
 A person needs an account before they can see the payment page.
+
+
+### There is still more to do with this
+This still needs more work. There is currently no way to set up admin users, other than using the admin system to change users to 'staff', who could then see a dashboard of orders, and customers. The current dashboard is a placeholder, which only 'is_staff' can see. You can look at this other repo for ideas of how to add visuals to it https://github.com/scharlau/polar_bears_django_visuals based on what you find interesting.
+
+A better version would only allow staff to remove and edit the products too. Ideally, there should be more tests too. It would've made developing these extra parts easier if tests showed where the pages 'broke' as parts were added.
+Oh, and the stuff from faker sometimes adds extra characters. Those need to be cleaned up.
+
+##  Doing the Work
+Work through the three rounds with a partner, or on your own, depending upon your circumstances. Each round should be twelve minutes, followed by a discussion of where you are and what has been working, as well as, what you're working on next.
+
+You may want to refer to the shop/models.py file to understand the database schema before you get started. Some of you might even want to diagram the schema. 
+
+You might also want to spend a few minutes at the start of each round planning what you might want to do.
+
+You'll see that this version works with the objects in the shop/models.py file to manipulate the data we display on the page. This means we've mostly abstracted away the SQL, and are working with objects for our queries and the dislay of results.
+
+There are some forms here for the products. These add the basic CRUD methods (create, read, update and delete). You could add similar ones for other objects.
+
+## The Exercises
+
+1. Round one should be fixing the order_detail.html page to show names of items and customers, who placed the order. If you have time, then you can also fix the customer_details.html page to show the customer's orders, and let them click through to the order_details.html page, which also needs more details added so customers/staff can see items.
+2. Round two should be implementing the 'dashboard' page to show the total value of orders placed by customers.
+3. Round three is adding it so that customers can see their own orders.
 
