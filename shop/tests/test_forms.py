@@ -8,6 +8,8 @@ from shop.forms import ProductForm
 # Create your tests here.
 # use the line below for debugging so that you can see what is on the page
 #  print(response.content)
+# good examples for form testing at https://www.valentinog.com/blog/testing-modelform/ 
+
 class ShopFormTests(TestCase):
         @classmethod
         def setUpTestData(cls):
@@ -23,5 +25,5 @@ class ShopFormTests(TestCase):
             product.save()
             self.assertEqual(product.name, 'my gadget')
            
-        
+        # add edit test using the form
   

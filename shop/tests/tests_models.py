@@ -5,6 +5,7 @@ from shop.models import Product
 # Create your tests here.
 # use the line below for debugging so that you can see what is on the page
 #  print(response.content)
+
 class ShopModelTests(TestCase):
         @classmethod
         def setUpTestData(cls):

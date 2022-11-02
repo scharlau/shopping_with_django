@@ -57,6 +57,9 @@ You'll see that this version works with the objects in the shop/models.py file t
 
 There are some forms here for the products. These add the basic CRUD methods (create, read, update and delete). You could add similar ones for other objects.
 
+### Testing 
+There are basic tests to confirm the site works for Products, but more should be added to confirm all models, and that the basket and purchase work correctly.
+
 ## The Exercises
 
 1. Round one should be fixing the order_detail.html page to show names of items and customers, who placed the order. If you have time, then you can also fix the customer_details.html page to show the customer's orders, and let them click through to the order_details.html page, which also needs more details added so customers/staff can see items.
