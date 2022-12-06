@@ -43,7 +43,9 @@ A person needs an account before they can see the payment page.
 ### There is still more to do with this
 This still needs more work. There is currently no way to set up admin users, other than using the admin system to change users to 'staff', who could then see a dashboard of orders, and customers. The current dashboard is a placeholder, which only 'is_staff' can see. You can look at this other repo for ideas of how to add visuals to it https://github.com/scharlau/polar_bears_django_visuals based on what you find interesting.
 
-A better version would only allow staff to remove and edit the products too. Ideally, there should be more tests too. It would've made developing these extra parts easier if tests showed where the pages 'broke' as parts were added.
+A better version would improve a range of things in this application. There are many places that need improvement.
+For example, you could only allow staff to remove and edit the products too. Only staff should be able to view customers and orders too, plus there are a number of authentication issues to put in place for view methods.
+Ideally, there should be more tests too. It would've made developing these extra parts easier if tests showed where the pages 'broke' as parts were added.
 Oh, and the stuff from faker sometimes adds extra characters. Those need to be cleaned up.
 
 ##  Doing the Work

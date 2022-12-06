@@ -27,7 +27,7 @@ def dashboard(request):
     if user.is_authenticated & user.is_staff:
         return render(request, 'shop/dashboard.html')
     else:
-        return redirect('shop:login.html')
+        return redirect('shop:login')
 
 # save order, clear basket and thank customer
 def payment(request):
